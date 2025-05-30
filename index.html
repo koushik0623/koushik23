@@ -1,47 +1,10 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Number Login</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    #error-msg {
-      color: red;
-      display: none;
-      margin-bottom: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -52,30 +15,6 @@
     <button onclick="loginWithNumber()">Login</button>
   </div>
 
-  <script>
-    function loginWithNumber() {
-      const number = document.getElementById('login-number').value.trim();
-      const errorMsg = document.getElementById('error-msg');
-
-      if (!/^\d{10}$/.test(number)) {
-        errorMsg.style.display = 'block';
-        return;
-      }
-
-      errorMsg.style.display = 'none';
-
-      // Admin number logic
-      if (number === '9999999999') {
-        alert("Welcome Admin");
-        window.location.href = 'https://koushik0623.github.io/swamy/';
-      } else {
-        alert("Login successful");
-        window.location.href = 'https://koushik0623.github.io/swamy/';
-      }
-    }
-  </script>
-
-</body>
-</html>
+  <script src="script.js"></script>
 </body>
 </html>
