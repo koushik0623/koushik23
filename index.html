@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login & Signup</title>
+  <title>Number Login</title>
   <style>
     html, body {
       margin: 0;
@@ -35,113 +36,46 @@
       font-size: 16px;
     }
 
-    #error-msg, #success-msg {
+    #error-msg {
       color: red;
       display: none;
       margin-bottom: 10px;
-    }
-
-    #success-msg {
-      color: green;
-    }
-
-    .switch-link {
-      color: blue;
-      cursor: pointer;
-      text-decoration: underline;
-      margin-top: 10px;
-      display: block;
     }
   </style>
 </head>
 <body>
 
-  <div class="container" id="login-section">
-    <h2>Sign In</h2>
-    <div id="error-msg">Invalid username or password</div>
-    <input type="text" id="login-username" placeholder="Username" />
-    <input type="password" id="login-password" placeholder="Password" />
-    <button onclick="signIn()">Login</button>
-    <span class="switch-link" onclick="switchToSignup()">Don't have an account? Sign Up</span>
-  </div>
-
-  <div class="container" id="signup-section" style="display: none;">
-    <h2>Sign Up</h2>
-    <div id="success-msg">Registered successfully. You can log in now.</div>
-    <div id="error-msg-signup">Username already exists</div>
-    <input type="text" id="signup-username" placeholder="Create username" />
-    <input type="password" id="signup-password" placeholder="Create password" />
-    <button onclick="signUp()">Register</button>
-    <span class="switch-link" onclick="switchToLogin()">Already have an account? Sign In</span>
+  <div class="container">
+    <h2>Number Login</h2>
+    <div id="error-msg">Please enter a valid 10-digit number</div>
+    <input type="tel" id="login-number" placeholder="Enter your number" maxlength="10" />
+    <button onclick="loginWithNumber()">Login</button>
   </div>
 
   <script>
-    function switchToSignup() {
-      document.getElementById('login-section').style.display = 'none';
-      document.getElementById('signup-section').style.display = 'block';
-      clearMessages();
-    }
+    function loginWithNumber() {
+      const number = document.getElementById('login-number').value.trim();
+      const errorMsg = document.getElementById('error-msg');
 
-    function switchToLogin() {
-      document.getElementById('signup-section').style.display = 'none';
-      document.getElementById('login-section').style.display = 'block';
-      clearMessages();
-    }
+      if (!/^\d{10}$/.test(number)) {
+        errorMsg.style.display = 'block';
+        return;
+      }
 
-    function clearMessages() {
-      document.getElementById('error-msg').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'none';
-      document.getElementById('error-msg-signup').style.display = 'none';
-    }
+      errorMsg.style.display = 'none';
 
-    function signIn() {
-      const username = document.getElementById('login-username').value.trim();
-      const password = document.getElementById('login-password').value.trim();
-
-      // Admin login (optional redirect)
-      if (username === 'admin' && password === 'admin@123') {
+      // Admin number logic
+      if (number === '9999999999') {
         alert("Welcome Admin");
-        window.location.href = 'https://koushik0623.github.io/swamy/'; // redirect for admin
-        return;
-      }
-
-      const users = JSON.parse(localStorage.getItem('users')) || [];
-      const user = users.find(u => u.username === username && u.password === password);
-
-      if (user) {
-        alert("Login successful");
-        window.location.href = 'https://koushik0623.github.io/swamy/'; // redirect for user
+        window.location.href = 'https://koushik0623.github.io/swamy/';
       } else {
-        document.getElementById('error-msg').style.display = 'block';
+        alert("Login successful");
+        window.location.href = 'https://koushik0623.github.io/swamy/';
       }
-    }
-
-    function signUp() {
-      const username = document.getElementById('signup-username').value.trim();
-      const password = document.getElementById('signup-password').value.trim();
-
-      if (!username || !password) {
-        alert("Please fill in both fields");
-        return;
-      }
-
-      let users = JSON.parse(localStorage.getItem('users')) || [];
-      const existing = users.find(u => u.username === username);
-
-      if (existing) {
-        document.getElementById('error-msg-signup').style.display = 'block';
-        return;
-      }
-
-      users.push({ username, password });
-      localStorage.setItem('users', JSON.stringify(users));
-
-      document.getElementById('signup-username').value = '';
-      document.getElementById('signup-password').value = '';
-      document.getElementById('error-msg-signup').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
     }
   </script>
 
+</body>
+</html>
 </body>
 </html>
