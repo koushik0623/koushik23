@@ -1,16 +1,20 @@
-function openForm(type) {
-  const form = document.getElementById("quoteForm");
-  form.style.display = "block";
-  const titleMap = {
-    life: "Life Insurance Form",
-    health: "Health Insurance Form",
-    mutual: "Mutual Fund Investment Form",
-    retirement: "Retirement Planning Form",
-    child: "Child Education Plan Form"
-  };
-  form.querySelector("h3").innerText = titleMap[type] || "Request a Free Quote";
-}
+function loginWithNumber() {
+  const number = document.getElementById('login-number').value.trim();
+  const errorMsg = document.getElementById('error-msg');
 
-function closeForm() {
-  document.getElementById("quoteForm").style.display = "none";
+  if (!/^\d{10}$/.test(number)) {
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  errorMsg.style.display = 'none';
+
+  // Admin number logic
+  if (number === '9999999999') {
+    alert("Welcome Admin");
+    window.location.href = 'https://koushik0623.github.io/swamy/';
+  } else {
+    alert("Login successful");
+    window.location.href = 'https://koushik0623.github.io/swamy/';
+  }
 }
