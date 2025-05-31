@@ -1,20 +1,22 @@
-function loginWithNumber() {
-  const number = document.getElementById('login-number').value.trim();
-  const errorMsg = document.getElementById('error-msg');
+document.getElementById("login-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  if (!/^\d{10}$/.test(number)) {
-    errorMsg.style.display = 'block';
+  const mobile = document.getElementById("mobile").value.trim();
+  const message = document.getElementById("login-message");
+
+  if (!/^\d{10}$/.test(mobile)) {
+    message.style.color = "red";
+    message.textContent = "Please enter a valid 10-digit number.";
     return;
   }
 
-  errorMsg.style.display = 'none';
-
-  // Admin number logic
-  if (number === '9999999999') {
-    alert("Welcome Admin");
-    window.location.href = 'https://koushik0623.github.io/swamy/';
+  if (mobile === "9999999999") {
+    message.style.color = "green";
+    message.textContent = "Login successful!";
+    document.getElementById("login-container").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
   } else {
-    alert("Login successful");
-    window.location.href = 'https://koushik0623.github.io/swamy/';
+    message.style.color = "red";
+    message.textContent = "Access denied. Use demo number: 9999999999";
   }
-}
+});
