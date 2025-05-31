@@ -2,42 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D.T.V.S. Swamy - Financial Planning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login with Mobile Number</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- LOGIN FORM -->
-  <div id="login-container">
-    <h2>Login with Mobile Number</h2>
-    <form id="login-form">
-      <input type="tel" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+
+  <div class="login-container">
+    <h2>Login with Mobile</h2>
+    <form id="loginForm">
+      <input type="tel" id="mobile" placeholder="Enter 10-digit mobile number" required maxlength="10" pattern="\d{10}" />
       <button type="submit">Login</button>
-      <p id="login-message"></p>
+      <div class="error" id="errorMsg"></div>
     </form>
-  </div>
-
-  <!-- MAIN WEBSITE CONTENT (hidden initially) -->
-  <div id="main-content" style="display: none;">
-    <!-- Your actual site goes here -->
-    <header>
-      <h1>D.T.V.S. Swamy</h1>
-      <p>One Stop Solution for All Financial Planning</p>
-    </header>
-
-    <section>
-      <h2>Services</h2>
-      <ul>
-        <li>LIC</li>
-        <li>Health Insurance</li>
-        <li>Mutual Funds</li>
-        <li>Financial Planning</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>Contact: +91 99999 99999 | Email: swamy@example.com</p>
-    </footer>
   </div>
 
   <script src="script.js"></script>
