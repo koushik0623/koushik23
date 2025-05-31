@@ -2,17 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Number Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D.T.V.S. Swamy - Financial Planning</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- LOGIN FORM -->
+  <div id="login-container">
+    <h2>Login with Mobile Number</h2>
+    <form id="login-form">
+      <input type="tel" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+      <button type="submit">Login</button>
+      <p id="login-message"></p>
+    </form>
+  </div>
 
-  <div class="container">
-    <h2>Number Login</h2>
-    <div id="error-msg">Please enter a valid 10-digit number</div>
-    <input type="tel" id="login-number" placeholder="Enter your number" maxlength="10" />
-    <button onclick="loginWithNumber()">Login</button>
+  <!-- YOUR FULL WEBSITE GOES HERE -->
+  <div id="main-content" style="display: none;">
+    <!-- Example of your content -->
+    <header>
+      <h1>D.T.V.S. Swamy</h1>
+      <p>One Stop Solution for All Financial Planning</p>
+    </header>
+
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer LIC, Health Insurance, Mutual Funds, and more.</p>
+    </section>
+
+    <footer>
+      <p>Contact: +91 99999 99999 | Email: info@example.com</p>
+    </footer>
   </div>
 
   <script src="script.js"></script>
