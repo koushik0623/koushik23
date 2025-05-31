@@ -1,19 +1,14 @@
-document.getElementById("login-form").addEventListener("submit", function (e) {
+document.getElementById("loginForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const mobile = document.getElementById("mobile").value.trim();
-  const message = document.getElementById("login-message");
+  const errorMsg = document.getElementById("errorMsg");
 
-  // Validate only that it is a 10-digit number
   if (!/^\d{10}$/.test(mobile)) {
-    message.style.color = "red";
-    message.textContent = "Please enter a valid 10-digit mobile number.";
+    errorMsg.textContent = "Please enter a valid 10-digit number.";
     return;
   }
 
-  // Allow any valid number
-  message.style.color = "green";
-  message.textContent = "Login successful!";
-  document.getElementById("login-container").style.display = "none";
-  document.getElementById("main-content").style.display = "block";
+  // Redirect to your website
+  window.location.href = "https://koushik0623.github.io/swamy/";
 });
