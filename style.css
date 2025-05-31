@@ -1,45 +1,51 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: #f7f7f7;
   margin: 0;
-  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#login-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 30px;
-  background: white;
+.login-container {
+  background: #fff;
+  padding: 30px 40px;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  width: 320px;
   text-align: center;
 }
 
-#login-container input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+.login-container h2 {
+  margin-bottom: 20px;
 }
 
-#login-container button {
+input[type="tel"] {
   width: 100%;
   padding: 12px;
-  background-color: #333;
-  color: white;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
   border: none;
+  color: #fff;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
 }
 
-#login-message {
-  margin-top: 10px;
-  font-weight: bold;
+button:hover {
+  background: #0056b3;
 }
 
-#main-content {
-  padding: 20px;
+.error {
+  color: red;
+  margin-top: 8px;
 }
